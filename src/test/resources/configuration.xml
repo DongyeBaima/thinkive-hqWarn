@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="GB2312"?>
+<system>
+
+	<category name="WarnServer" description="与提醒服务器相关的配置">
+		<item name="ServerID" value="WARN_2" description="服务器ID，保证全局唯一" />
+		<item name="ZoneID" value="0" description="分区ID，当部署多台提醒服务器时，需要给每台提醒服务器分配分区ID，从0开始" />
+		<item name="Priority" value="2" description="优先级，优先级高的将优先成为主机" />
+		<item name="PushThreadCount" value="3" description="推送任务线程个数" />
+		<item name="JudgeThreadCount" value="3" description="触发任务线程个数" />
+	</category>
+
+	<category name="PushServer" description="推送服务器">
+		<item name="Address" value="http://112.65.144.19:9150/pushService" description="[极光推送]推送服务器地址,可配置多个，用“|”分割" />
+
+		<item name="BusName" value="PushServer" description="[BUS推送通道]bus服务器名称" />
+		<item name="ProductName" value="思迪综合APP标准版" description="前端应用名称" />
+
+		<item name="HSPushTime" value="0925-1130|1300-2400" description="沪深市场推送触发时间，可配置多个时间端，用|分割" />
+		<item name="HKPushTime" value="0925-1100|1300-1500" description="沪港通市场推送触发时间，可配置多个时间端，用|分割" />
+		<item name="RetryCount" value="1" description="推送失败 重试次数" />
+	</category>
+
+	<category name="HQ" description="行情相关配置">
+		<item name="ZMJHost" value="192.168.1.92:25957" description="转码机地址，可配置多个，用“|”分割" />
+		<item name="GateWayHost" value="192.168.1.92:26000" description="网关地址，可配置多个，用“|”分割" />
+	</category>
+
+	<category name="jetty" description="服务器配置">
+		<item name="port" value="9096" description="服务器监听的端口" />
+		<item name="maxidletime" value="180000" description="连接最大空闲时间" />
+		<item name="minthreads" value="10" description="初始化线程池" />
+		<item name="maxthreads" value="100" description="最大线程池" />
+		<item name="webroot" value="./WebRoot" description="web根目录路径" />
+		<item name="confpath" value="./bin/jetty-web.xml" description="web.xml文件路径" />
+	</category>
+
+</system>
+
